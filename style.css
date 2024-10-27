@@ -1,0 +1,100 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video Background Styling */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video stays behind other elements */
+    opacity: 0.5;
+    filter: blur(2px);
+}
+
+/* Menu container */
+.menu-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 10, 40, 0.7);
+    padding: 60px;
+    border-radius: 20px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 30px rgba(0, 50, 80, 0.8);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 300px;
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Title styling */
+.menu-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #e0f7ff;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Menu options */
+.menu-option {
+    font-size: 1.3rem;
+    margin: 20px 0;
+    padding: 15px;
+    cursor: pointer;
+    color: #00bcd4;
+    background: rgba(0, 80, 120, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 80, 120, 0.7);
+}
+
+.menu-option:hover {
+    background-color: rgba(0, 100, 160, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Loading screen styling */
+.loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 10, 40, 0.95);
+    color: #00e5ff;
+    font-size: 2rem;
+    z-index: 2;
+    animation: fade-in 1s ease;
+    display: none;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(-10px); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Game Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <div class="menu-box">
+            <h1 class="menu-title">Adventure Awaits</h1>
+            <div class="menu-option start-game" onclick="startGame()">Start Game</div>
+            <div class="menu-option settings">Settings</div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen" style="display: none;">
+        <h2>Loading...</h2>
+    </div>
+
+    <!-- Inline Script for Loading Function -->
+    <script>
+        function startGame() {
+            document.getElementById('loadingScreen').style.display = 'flex';
+            document.querySelector('.menu-container').style.display = 'none';
+            setTimeout(() => {
+                window.location.href = 'game.html';
+            }, 2000); // Delay for loading screen effect
+        }
+    </script>
+</body>
+</html>
